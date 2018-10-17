@@ -1,0 +1,114 @@
+/* ----------GLOBAL---------*/
+/* -----Colors-----*/
+.black {
+  color: #000;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.blue {
+  color: #1296D7;
+}
+
+.bg-blue {
+  background-color: #1296D7;
+}
+
+.purple {
+  color: #8F318A;
+}
+
+.bg-purple {
+  background-color: #8F318A;
+}
+
+.red {
+  color: #E5141E;
+}
+
+.bg-red {
+  background-color: #E5141E;
+}
+
+.orange {
+  color: #F27119;
+}
+
+.bg-orange {
+  background-color: #F27119;
+}
+
+.yellow {
+  color: #FEB611;
+}
+
+.bg-yellow {
+  background-color: #FEB611;
+}
+
+.green {
+  color: #62B03C;
+}
+
+.bg-green {
+  background-color: #62B03C;
+}
+/* -----Colors End-----*/
+/* -----Custom Heights -----*/
+.vh-85 {
+  height: 85vh;
+}
+
+.vh-5 {
+  height: 5vh;
+}
+
+.vh-2 {
+  height: 2vh;
+}
+
+.h-6 {
+  height: 6%;
+}
+/* -----Custom Heights End-----*/
+/* ----------GLOBAL END---------*/
+/* ----------HOME PAGE---------*/
+.vh-85 .bg-blue {
+  border: 4px solid #1296D7;
+  transition:all .07s;
+}
+
+.vh-85 .bg-blue:hover,
+.vh-85 .bg-purple:hover,
+.vh-85 .bg-red:hover,
+.vh-85 .bg-orange:hover,
+.vh-85 .bg-yellow:hover,
+.vh-85 .bg-green:hover {
+  transform: scale(1.01);
+  border-color: #ffc600;
+  box-shadow: 0 0 14px #ffc600;
+  z-index: 1;
+}
+
+.vh-85 .bg-purple {
+  border: 4px solid #8F318A;
+}
+
+.vh-85 .bg-red {
+  border: 4px solid #E5141E;
+}
+
+.vh-85 .bg-orange {
+  border: 4px solid #F27119;
+}
+
+.vh-85 .bg-yellow {
+  border: 4px solid #FEB611;
+}
+
+.vh-85 .bg-green {
+  border: 4px solid #62B03C;
+}
+/* ----------HOME PAGE END---------*/
