@@ -7,52 +7,128 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
   </script>
   <title>Kevin Herrera's Portfolio</title>
 </head>
 <body>
-  <div class="container-fluid">
+  <!-- Loading Static TV div-->
+  <div class="loading" id="loadingDiv"></div>
+  <div class="container-fluid" id="contentDiv">
     <div class="row vh-5"><div class="col-12 bg-black"></div></div>
 
     <div class="row vh-85">
 
-      <div class="col-2 bg-blue">
+      <div class="col-2 bg-blue" onclick="fadeInLoadingDiv()">
       </div>
 
-      <div class="col-2 bg-purple">
-      </div>
+      <a href="./about.html" class="col-2 bg-purple" id="about"><div onclick="fadeInLoadingDiv()">
+        <p class="vericaltext" id="aboutText">ABOUT</p>
+      </div></a>
 
-      <div class="col-2 bg-red">
-      </div>
+      <a href="./portfolio.html" class="col-2 bg-red"><div onclick="fadeInLoadingDiv()">
+        <p class="vericaltext" id="portfolio">PORTFOLIO</p>
+      </div></a>
 
-      <div class="col-2 bg-orange">
-      </div>
+      <a href="./blog.html" class="col-2 bg-orange"><div onclick="fadeInLoadingDiv()">
+        <p class="vericaltext" id="blog">BLOG</p>
+      </div></a>
 
-      <div class="col-2 bg-yellow">
-      </div>
+      <a href="./contact.html" class="col-2 bg-yellow"><div onclick="fadeInLoadingDiv()">
+        <p class="vericaltext" id="contact">CONTACT</p>
+      </div></a>
 
-      <div class="col-2 bg-green">
+      <div class="col-2 bg-green" onclick="fadeInLoadingDiv()">
       </div>
 
     </div>
 
     <div class="row vh-5">
       <div class="col-2 bg-yellow"></div>
-      <div class="col-2 bg-black">Blog</div>
+      <div class="col-2 bg-black"></div>
       <div class="col-2 bg-blue"></div>
-      <div class="col-2 bg-black">Contact</div>
+      <div class="col-2 bg-black"></div>
       <div class="col-2 bg-purple"></div>
-      <div class="col-2 bg-black">Portfolio</div>
+      <div class="col-2 bg-black"></div>
     </div>
 
     <div class="row vh-5"><div class="col-12 bg-black"></div></div>
   </div>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS, then my custom JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./script.js">
+  <!-- <script type="text/javascript" src="./script.js"></script> -->
+  <script>
+  // delays the a tag from firing so that the loading div can function
+  $(function(){
+    $("a").click(function(evt){
+        evt.preventDefault();
+        var link = $(this).attr("href");
+        setTimeout(function() {
+            window.location.href = link;
+        }, 1000);
+        fadeInLoadingDiv()
+    });
+});
+
+  //Loading Div
+  function fadeInLoadingDiv() {
+    $('#loadingDiv').fadeIn("slow");
+    $("#contentDiv").css({ // this is just for style
+        "opacity": "0.08",
+        "z-index": "999"
+    });
+
+    setTimeout(function() {
+      /* Loading Div fadeout after page return */
+      $('#loadingDiv').fadeOut("fast");
+      $("#contentDiv").css({ // this is just for style
+          "opacity": "1",
+          "z-index": "0"
+      });
+    }, 1000);
+  }
+
+  $.fn.extend({
+    animateCss: function(animationName, callback) {
+      var animationEnd = (function(el) {
+        var animations = {
+          animation: 'animationend',
+          OAnimation: 'oAnimationEnd',
+          MozAnimation: 'mozAnimationEnd',
+          WebkitAnimation: 'webkitAnimationEnd',
+        };
+
+        for (var t in animations) {
+          if (el.style[t] !== undefined) {
+            return animations[t];
+          }
+        }
+      })(document.createElement('div'));
+
+      this.addClass('animated ' + animationName).one(animationEnd, function() {
+        $(this).removeClass('animated ' + animationName);
+
+        if (typeof callback === 'function') callback();
+      });
+
+      return this;
+    },
+  });
+
+  $('#contact').animateCss('bounce');
+
+  $('#about').mouseover(function(){
+    $('#aboutText').css('display', 'block');
+  });
+  </script>
+
 </body>
 </html>
