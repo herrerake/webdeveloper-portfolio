@@ -114,14 +114,17 @@ a:hover {
   text-underline-line: none;
 }
 
-.vericaltext {
-  width: 1px;
-  word-wrap: break-word;
+.verticalText {
   font-size: 48px;
   text-align: center;
-  margin: 80px auto;
   color: black;
   display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 10;
 }
 
 /* ----------GLOBAL END---------*/
