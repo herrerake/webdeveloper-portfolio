@@ -84,7 +84,8 @@
     $('#loadingDiv').fadeIn("slow");
     $("#contentDiv").css({ // this is just for style
         "opacity": "0.08",
-        "z-index": "999"
+        "z-index": "999",
+        "display" : "block"
     });
 
     setTimeout(function() {
@@ -92,7 +93,8 @@
       $('#loadingDiv').fadeOut("slow");
       $("#contentDiv").css({ // this is just for style
           "opacity": "1",
-          "z-index": "0"
+          "z-index": "0",
+          "display": "none"
       });
     }, 1000);
   }
