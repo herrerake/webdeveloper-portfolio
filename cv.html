@@ -14,101 +14,52 @@
 <body>
 <div id="nav-placeholder"></div>
 <div class="container mt-5">
-    <div class="col-12">
-        <h1>Portfolio</h1>
-    </div>
-    <div class="row justify-content-center align-items-center">
-        <div class="col-md-6">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <!--Avatar-->
-                <div class="avatar mx-auto white">
-                    <img src="" class="rounded-circle">
-                </div>
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title">AVEC - AVIXA</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <p class="contact-list">
-                        Website URL: <a href="https://www.avexecutiveconference.com">AV Executive Conference</a>
-                    </p>
-                    <p class="contact-list">
-                        Overview: <a href="">Overview</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <!--Avatar-->
-                <div class="avatar mx-auto white">
-                    <img src="" class="rounded-circle">
-                </div>
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title">TIDE - AVIXA</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <p class="contact-list">
-                        Website URL: <a href="https://www.tideconference.com">TIDE Conference</a>
-                    </p>
-                    <p class="contact-list">
-                        Overview: <a href="">Overview</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-6">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <!--Avatar-->
-                <div class="avatar mx-auto white">
-                    <img src="" class="rounded-circle">
-                </div>
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title">AVIXA - AVIXA</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <p class="contact-list">
-                        Website URL: <a href="https://www.avixa.org">AVIXA</a>
-                    </p>
-                    <p class="contact-list">
-                        Overview: <a href="">Overview</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-<div class="col-md-6">
-    <div class="card testimonial-card animated fadeIn delay-fast">
-        <!--Avatar-->
-        <div class="avatar mx-auto white">
-            <img src="" class="rounded-circle">
-        </div>
-        <div class="card-body">
-            <!--Name-->
-            <h4 class="card-title">Veurinks RV - Level5 Advertising</h4>
-            <hr>
-            <!--Quotation-->
-            <p class="contact-list">
-                Website URL: <a href="https://www.veurinksrv.com/">Veurinks RV</a>
-            </p>
-            <p class="contact-list">
-                Overview: <a href="">Overview</a>
-            </p>
-        </div>
-    </div>
-</div>
-    </div>
+    <h1>Portfolio</h1>
+    <div id="portfolio"></div>
 </div>
 <div class="container mt-5 mb-5">
-    <div class="row">
-        <div class="col-12">
-            <h1>Resume</h1>
+    <h1>Resume</h1>
+    <div id="resume"></div>
+    <div id="workExperience"></div>
+</div>
+<div id="vignetteInner"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="./animationjscode.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+<!-- <script>
+    $(function () {
+        $("#nav-placeholder").load("navigation.html");
+    });
+</script> -->
+<script id="portfolio-template" type="text/x-handlebars-template">
+<div class="row justify-content-center align-items-center">
+    {{#each projects}}
+        <div class="col-md-6 mb-5">
+            <div class="card testimonial-card animated fadeIn delay-fast">
+                <div class="card-body">
+                    <!--Name-->
+                    <h4 class="card-title">{{title}}</h4>
+                    <hr>
+                    <!--Quotation-->
+                    <p class="contact-list">
+                        Website URL: <a href="{{websiteURL}}">{{website}}</a>
+                    </p>
+                    <p class="contact-list">
+                        Overview: <a href="">Overview</a>
+                    </p>
+                </div>
+            </div>
         </div>
+    {{/each}}
     </div>
-    <div class="row">
+</script>
+<script id="resume-template" type="text/x-handlebars-template">
+    <div class="row justify-content-center align-items-center">
         <div class="col-md-12">
             <div class="card testimonial-card animated fadeIn delay-fast">
                 <div class="card-body">
@@ -116,20 +67,18 @@
                     <h4 class="card-title text-left">Technologies & Skills</h4>
                     <hr>
                     <!--Quotation-->
+                    {{#each techSkills}}
                     <p class="contact-list">
-                        HTML
+                        {{[]}}
                     </p>
-                    <p class="contact-list">
-                        CSS
-                    </p>
-                    <p class="contact-list">
-                        JavaScript
-                    </p>
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
-    <div class="row mt-5">
+</script>
+<script id="workExperience-template" type="text/x-handlebars-template">
+    <div class="row justify-content-center align-items-center mt-5">
         <div class="col-md-12">
             <div class="card testimonial-card animated fadeIn delay-fast">
                 <div class="card-body">
@@ -137,90 +86,19 @@
                     <h4 class="card-title text-left">Work Experience</h4>
                     <hr>
                     <!--Quotation-->
+                    {{#each workExperience}}
                     <p class="contact-list">
-                        AVIXA
+                        {{[]}}
                     </p>
-                    <p class="contact-list">
-                        Level 10 Marketing / Level 5
-                    </p>
-                    <p class="contact-list">
-                        George Washington University Coding Bootcamp
-                    </p>
-                    <p class="contact-list">
-                        Orpheus Incorporated
-                    </p>
-                    <p class="contact-list">
-                        General Assembly
-                    </p>
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-md-12">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title text-left">Education</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <p class="contact-list">
-                        General Assembly
-                    </p>
-                    <p class="contact-list">
-                        Virginia Commonwealth University
-                    </p>
-                    <p class="contact-list">
-                        University of West Indies
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="vignetteInner"></div>
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
-<script type="text" src="/animationjscode.js"></script>
-<script>
-    $(function () {
-        $("#nav-placeholder").load("navigation.html");
-    });
 </script>
+<script type="text/javascript" src="./portfolio.js"></script>
 <script>
-    $.fn.extend({
-        animateCss: function (animationName, callback) {
-            var animationEnd = (function (el) {
-                var animations = {
-                    animation: 'animationend',
-                    OAnimation: 'oAnimationEnd',
-                    MozAnimation: 'mozAnimationEnd',
-                    WebkitAnimation: 'webkitAnimationEnd',
-                };
-
-                for (var t in animations) {
-                    if (el.style[t] !== undefined) {
-                        return animations[t];
-                    }
-                }
-            })(document.createElement('div'));
-
-            this.addClass('animated ' + animationName).one(animationEnd, function () {
-                $(this).removeClass('animated ' + animationName);
-
-                if (typeof callback === 'function') callback();
-            });
-
-            return this;
-        },
-    });
-
     // $(".testimonial-card").animateCss('fadeIn');
 </script>
-
+</body>
 </html>

@@ -64,7 +64,7 @@
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script type="text" src="/animationjscode.js"></script>
+  <script type="text/javascript" src="./animationjscode.js"></script>
   <!-- <script type="text/javascript" src="./script.js"></script> -->
   <script>
   // delays the a tag from firing so that the loading div can function
@@ -99,32 +99,6 @@
     }, 1000);
   }
 
-  $.fn.extend({
-    animateCss: function (animationName, callback) {
-    var animationEnd = (function (el) {
-    var animations = {
-    animation: 'animationend',
-    OAnimation: 'oAnimationEnd',
-    MozAnimation: 'mozAnimationEnd',
-    WebkitAnimation: 'webkitAnimationEnd',
-    };
-
-    for (var t in animations) {
-    if (el.style[t] !== undefined) {
-    return animations[t];
-    }
-    }
-    })(document.createElement('div'));
-
-    this.addClass('animated ' + animationName).one(animationEnd, function () {
-    $(this).removeClass('animated ' + animationName);
-
-    if (typeof callback === 'function') callback();
-    });
-
-    return this;
-    },
-  });
   //Home page when user hovers over div it displays text within text
   $('.hoverBox').mouseover(function(){
     var matchingDiv = $(this).find('p');
