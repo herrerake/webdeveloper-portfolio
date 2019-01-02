@@ -10,6 +10,43 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </script>
 <title>Kevin Herrera's CV</title>
+<style>
+#myBtn {
+/* display: none; Hidden by default */
+/* position: fixed; Fixed/sticky position */
+bottom: 20px; /* Place the button at the bottom of the page */
+right: 30px; /* Place the button 30px from the right */
+z-index: 99; /* Make sure it does not overlap */
+border: none; /* Remove borders */
+outline: none; /* Remove outline */
+background-color: red; /* Set a background color */
+color: white; /* Text color */
+cursor: pointer; /* Add a mouse pointer on hover */
+padding: 15px; /* Some padding */
+border-radius: 10px; /* Rounded corners */
+font-size: 18px; /* Increase font size */
+height: 55px;
+width: 40%;
+}
+
+#myBtn:hover {
+background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.remote {
+width: 150px;
+height: 200px;
+position: fixed;
+bottom: 20px;
+right: 30px;
+background-color: #e3e3e3;
+display: flex;
+flex-direction: row;
+flex-flow: row wrap;
+justify-content: space-evenly;
+align-items: center;
+}
+</style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
@@ -21,6 +58,13 @@
     <h1>Resume</h1>
     <div id="resume"></div>
     <div id="workExperience"></div>
+    <div id="education"></div>
+</div>
+<div class="remote">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">AB</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">CT</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back</button>
 </div>
 <div id="vignetteInner"></div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -31,11 +75,11 @@
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="./animationjscode.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-<!-- <script>
+<script>
     $(function () {
         $("#nav-placeholder").load("navigation.html");
     });
-</script> -->
+</script>
 <script id="portfolio-template" type="text/x-handlebars-template">
 <div class="row justify-content-center align-items-center">
     {{#each projects}}
@@ -47,10 +91,10 @@
                     <hr>
                     <!--Quotation-->
                     <p class="contact-list">
-                        Website URL: <a href="{{websiteURL}}">{{website}}</a>
+                        Website URL: <a href="{{websiteURL}}" target="_blank">{{website}}</a>
                     </p>
                     <p class="contact-list">
-                        Overview: <a href="">Overview</a>
+                        Overview: <a href="{{overviewLink}}" target="_blank">Overview</a>
                     </p>
                 </div>
             </div>
@@ -67,11 +111,15 @@
                     <h4 class="card-title text-left">Technologies & Skills</h4>
                     <hr>
                     <!--Quotation-->
-                    {{#each techSkills}}
-                    <p class="contact-list">
-                        {{[]}}
-                    </p>
-                    {{/each}}
+                    <div class="row">
+                        {{#each techSkills}}
+                        <div class="col-4">
+                            <p class="contact-list">
+                                {{[]}}
+                            </p>
+                        </div>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,11 +134,38 @@
                     <h4 class="card-title text-left">Work Experience</h4>
                     <hr>
                     <!--Quotation-->
-                    {{#each workExperience}}
-                    <p class="contact-list">
-                        {{[]}}
-                    </p>
-                    {{/each}}
+                    <div class="row">
+                        {{#each workExperience}}
+                        <div class="col-md-6">
+                            <p class="contact-list">
+                                {{[]}}
+                            </p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="education-template" type="text/x-handlebars-template">
+    <div class="row justify-content-center align-items-center mt-5">
+        <div class="col-md-12">
+            <div class="card testimonial-card animated fadeIn delay-fast">
+                <div class="card-body">
+                    <!--Name-->
+                    <h4 class="card-title text-left">Education & Training</h4>
+                    <hr>
+                    <!--Quotation-->
+                    <div class="row">
+                        {{#each education}}
+                        <div class="col-md-6">
+                            <p class="contact-list">
+                                {{[]}}
+                            </p>
+                        </div>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,7 +173,24 @@
 </script>
 <script type="text/javascript" src="./portfolio.js"></script>
 <script>
-    // $(".testimonial-card").animateCss('fadeIn');
+     $(".testimonial-card").animateCss('fadeIn');
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+document.getElementById("myBtn").style.display = "block";
+} else {
+document.getElementById("myBtn").style.display = "block";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 </script>
 </body>
 </html>
