@@ -65,40 +65,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./animationjscode.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
   <!-- <script type="text/javascript" src="./script.js"></script> -->
   <script>
-  // delays the a tag from firing so that the loading div can function
-  $(function(){
-    $("a").click(function(evt){
-        evt.preventDefault();
-        var link = $(this).attr("href");
-        setTimeout(function() {
-            window.location.href = link;
-        }, 1000);
-        fadeInLoadingDiv()
-    });
-  });
-
-  //Loading Div
-  function fadeInLoadingDiv() {
-    $('#loadingDiv').fadeIn("slow");
-    $("#contentDiv").css({ // this is just for style
-        "opacity": "0.08",
-        "z-index": "999",
-        "display" : "block"
-    });
-
-    setTimeout(function() {
-      /* Loading Div fadeout after page return */
-      $('#loadingDiv').fadeOut("slow");
-      $("#contentDiv").css({ // this is just for style
-          "opacity": "1",
-          "z-index": "0",
-          "display": "none"
-      });
-    }, 1000);
-  }
-
   //Home page when user hovers over div it displays text within text
   // $('.hoverBox').mouseover(function(){
   //   var matchingDiv = $(this).find('p');
