@@ -14,7 +14,16 @@
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
+    <div class="loading" id="loadingDiv"></div>
+<div class="remote">
+    <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="aboutBtn" title="Go to About Page" href="./about.html">AB</a>
+    <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Contact Page" href="./cv.html">CT</a>
+    <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Blog Page" href="./blog.html">BLG</a>
+    <a onclick="topFunction()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()">Back</a>
+</div>
+<div class="container" id="contentDiv">
+    
+</div>
     <div id="vignetteInner"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
