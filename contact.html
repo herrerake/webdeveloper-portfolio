@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,24 +7,18 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous">
+  crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="./style.css">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </script>
-  <title>Kevin Herrera's Contact Information</title>
+</script>
+<title>Kevin Herrera's Contact Information</title>
 </head>
-
 <body>
-<div class="loading" id="loadingDiv"></div>
-<div class="remote">
-  <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="aboutBtn" title="Go to About Page" href="./about.html">AB</a>
-  <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Contact Page" href="./cv.html">CT</a>
-  <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Blog Page" href="./blog.html">BLG</a>
-  <a onclick="topFunction()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()">Back</a>
-</div>
+  <!-- Loading Static TV div-->
+  <div class="loading" id="loadingDiv"></div>
   <div class="container" id="contentDiv">
     <div class="row justify-content-center align-items-center vh-100">
       <div class="col-md-6">
@@ -59,46 +52,52 @@
         </div>
       </div>
     </div>
+    <div class="remote">
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="aboutBtn" title="Go to About Page" href="./about.html">AB</a>
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Contact Page" href="./cv.html">CT</a>
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Blog Page" href="./blog.html">BLG</a>
+      <a onclick="topFunction()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()">Back</a>
+    </div>
   </div>
-<div id="vignetteHome"></div>
+  <div id="vignetteHome"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-  crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-  crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 <script type="text" src="/animationjscode.js"></script>
 <script type="text/javascript" src="./script.js"></script>
 <script>
-  $.fn.extend({
-    animateCss: function (animationName, callback) {
-      var animationEnd = (function (el) {
-        var animations = {
-          animation: 'animationend',
-          OAnimation: 'oAnimationEnd',
-          MozAnimation: 'mozAnimationEnd',
-          WebkitAnimation: 'webkitAnimationEnd',
-        };
+$.fn.extend({
+  animateCss: function (animationName, callback) {
+    var animationEnd = (function (el) {
+      var animations = {
+        animation: 'animationend',
+        OAnimation: 'oAnimationEnd',
+        MozAnimation: 'mozAnimationEnd',
+        WebkitAnimation: 'webkitAnimationEnd',
+      };
 
-        for (var t in animations) {
-          if (el.style[t] !== undefined) {
-            return animations[t];
-          }
+      for (var t in animations) {
+        if (el.style[t] !== undefined) {
+          return animations[t];
         }
-      })(document.createElement('div'));
+      }
+    })(document.createElement('div'));
 
-      this.addClass('animated ' + animationName).one(animationEnd, function () {
-        $(this).removeClass('animated ' + animationName);
+    this.addClass('animated ' + animationName).one(animationEnd, function () {
+      $(this).removeClass('animated ' + animationName);
 
-        if (typeof callback === 'function') callback();
-      });
+      if (typeof callback === 'function') callback();
+    });
 
-      return this;
-    },
-  });
+    return this;
+  },
+});
 
-  // $(".testimonial-card").animateCss('fadeIn');
+// $(".testimonial-card").animateCss('fadeIn');
 </script>
 
 </html>

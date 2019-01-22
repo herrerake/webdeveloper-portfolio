@@ -1,143 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-<link rel="stylesheet" href="./style.css">
-<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </script>
 <title>Kevin Herrera's CV</title>
-<style>
-</style>
 </head>
 <body>
-<!-- Loading Static TV div-->
-<div class="loading" id="loadingDiv"></div>
-<div id="contentDiv">
-<div class="container mt-5">
-    <h1>Portfolio</h1>
-    <div id="portfolio"></div>
-</div>
-<div class="container mt-5 mb-5">
-    <h1>Resume</h1>
-    <div id="resume"></div>
-    <div id="workExperience"></div>
-    <div id="education"></div>
-</div>
-<div class="remote">
-    <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="aboutBtn" title="Go to About Page" href="./about.html">AB</a>
-    <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Contact Page" href="./contact.html">CT</a>
-    <button onclick="topFunction()" class="remoteBtn" id="myBtn" title="Go to Top">Top</button>
-    <a onclick="topFunction()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()">Back</a>
-</div>
-</div>
-<div id="vignetteInner"></div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
-<script type="text/javascript" src="./animationjscode.js"></script>
-<script type="text/javascript" src="./script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-<script id="portfolio-template" type="text/x-handlebars-template">
-<div class="row justify-content-center align-items-center">
-    {{#each projects}}
-        <div class="col-md-6 mb-5">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title">{{title}}</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <p class="contact-list">
-                        Website URL: <a href="{{websiteURL}}" target="_blank">{{website}}</a>
-                    </p>
-                    <p class="contact-list">
-                        Overview: <a href="{{overviewLink}}" target="_blank">Overview</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    {{/each}}
+  <!-- Loading Static TV div-->
+  <div class="loading" id="loadingDiv"></div>
+  <div id="contentDiv">
+    <div class="container mt-5">
+      <h1>Portfolio</h1>
+      <div id="portfolio"></div>
     </div>
-</script>
-<script id="resume-template" type="text/x-handlebars-template">
+    <div class="container mt-5 mb-5">
+      <h1>Resume</h1>
+      <div id="resume"></div>
+      <div id="workExperience"></div>
+      <div id="education"></div>
+    </div>
+    <div class="remote">
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="aboutBtn" title="Go to About Page" href="./about.html">AB</a>
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Contact Page" href="./contact.html">CT</a>
+      <button onclick="topFunction()" class="remoteBtn" id="myBtn" title="Go to Top">Top</button>
+      <a onclick="topFunction()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()">Back</a>
+    </div>
+  </div>
+  <div id="vignetteInner"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./animationjscode.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <script id="portfolio-template" type="text/x-handlebars-template">
     <div class="row justify-content-center align-items-center">
-        <div class="col-md-12">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title text-left">Technologies & Skills</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <div class="row">
-                        {{#each techSkills}}
-                        <div class="col-4">
-                            <p class="contact-list">
-                                {{[]}}
-                            </p>
-                        </div>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
+      {{#each projects}}
+      <div class="col-md-6 mb-5">
+        <div class="card testimonial-card animated fadeIn delay-fast">
+          <div class="card-body">
+            <!--Name-->
+            <h4 class="card-title">{{title}}</h4>
+            <hr>
+            <!--Quotation-->
+            <p class="contact-list">
+              Website URL: <a href="{{websiteURL}}" target="_blank">{{website}}</a>
+            </p>
+            <p class="contact-list">
+              Overview: <a href="{{overviewLink}}" target="_blank">Overview</a>
+            </p>
+          </div>
         </div>
+      </div>
+      {{/each}}
     </div>
-</script>
-<script id="workExperience-template" type="text/x-handlebars-template">
+  </script>
+  <script id="resume-template" type="text/x-handlebars-template">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-12">
+        <div class="card testimonial-card animated fadeIn delay-fast">
+          <div class="card-body">
+            <!--Name-->
+            <h4 class="card-title text-left">Technologies & Skills</h4>
+            <hr>
+            <!--Quotation-->
+            <div class="row">
+              {{#each techSkills}}
+              <div class="col-4">
+                <p class="contact-list">
+                  {{[]}}
+                </p>
+              </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="workExperience-template" type="text/x-handlebars-template">
     <div class="row justify-content-center align-items-center mt-5">
-        <div class="col-md-12">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title text-left">Work Experience</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <div class="row">
-                        {{#each workExperience}}
-                        <div class="col-md-6">
-                            <p class="contact-list">
-                                {{[]}}
-                            </p>
-                        </div>
-                        {{/each}}
-                    </div>
-                </div>
+      <div class="col-md-12">
+        <div class="card testimonial-card animated fadeIn delay-fast">
+          <div class="card-body">
+            <!--Name-->
+            <h4 class="card-title text-left">Work Experience</h4>
+            <hr>
+            <!--Quotation-->
+            <div class="row">
+              {{#each workExperience}}
+              <div class="col-md-6">
+                <p class="contact-list">
+                  {{[]}}
+                </p>
+              </div>
+              {{/each}}
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</script>
-<script id="education-template" type="text/x-handlebars-template">
+  </script>
+  <script id="education-template" type="text/x-handlebars-template">
     <div class="row justify-content-center align-items-center mt-5">
-        <div class="col-md-12">
-            <div class="card testimonial-card animated fadeIn delay-fast">
-                <div class="card-body">
-                    <!--Name-->
-                    <h4 class="card-title text-left">Education & Training</h4>
-                    <hr>
-                    <!--Quotation-->
-                    <div class="row">
-                        {{#each education}}
-                        <div class="col-md-6">
-                            <p class="contact-list">
-                                {{[]}}
-                            </p>
-                        </div>
-                        {{/each}}
-                    </div>
-                </div>
+      <div class="col-md-12">
+        <div class="card testimonial-card animated fadeIn delay-fast">
+          <div class="card-body">
+            <!--Name-->
+            <h4 class="card-title text-left">Education & Training</h4>
+            <hr>
+            <!--Quotation-->
+            <div class="row">
+              {{#each education}}
+              <div class="col-md-6">
+                <p class="contact-list">
+                  {{[]}}
+                </p>
+              </div>
+              {{/each}}
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</script>
-<script type="text/javascript" src="./portfolio.js"></script>
-<script>
-$(".testimonial-card").animateCss('fadeIn');
+  </script>
+  <script type="text/javascript" src="./portfolio.js"></script>
+  <script>
+  $(".testimonial-card").animateCss('fadeIn');
 
 </script>
 </body>
