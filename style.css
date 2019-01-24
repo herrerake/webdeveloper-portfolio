@@ -1,4 +1,7 @@
 /* ----------GLOBAL---------*/
+html {
+  scroll-behavior: smooth;
+}
 /* -----Colors-----*/
 .black {
   color: #000;
@@ -199,7 +202,14 @@ a:hover {
   border-radius: 50%;
   opacity: .76;
   z-index: 99;
+}
 
+.litteBtns {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* ----------GLOBAL END---------*/
 /* ----------HOME PAGE---------*/

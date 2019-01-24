@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="./style.css">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+  crossorigin="anonymous">
 </script>
 <title>Kevin Herrera's Contact Information</title>
 </head>
@@ -33,19 +34,19 @@
             <hr>
             <!--Quotation-->
             <p class="contact-list">
-              <i class="fa fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+              <i class="fab fa-linkedin"></i>
               LinkedIn: <a href="https://www.linkedin.com/in/herrerake">www.linkedin.com/in/herrerake</a>
             </p>
             <p class="contact-list">
-              <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+              <i class="fas fa-envelope"></i>
               Email: <a href="mailto:https://www.linkedin.com/in/herrerake">1herrerake@gmail.com</a>
             </p>
             <p class="contact-list">
-              <i class="fa fa-github fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+              <i class="fab fa-github-square"></i>
               GitHub: <a href="https://github.com/herrerake">github.com/herrerake</a>
             </p>
             <p class="contact-list">
-              <i class="fa fa-twitter fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+              <i class="fab fa-twitter-square"></i>
               Twitter: <a href="https://twitter.com/herrerake_"> @herrerake_</a>
             </p>
           </div>
@@ -54,9 +55,12 @@
     </div>
     <div class="remote">
       <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="aboutBtn" title="Go to About Page" href="./about.html">AB</a>
-      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Contact Page" href="./cv.html">CT</a>
-      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="contactBtn" title="Go to Blog Page" href="./blog.html">BLG</a>
-      <a onclick="topFunction()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()">Back</a>
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="blogBtn" title="Go to Blog Page" href="./blog.html">BG</a>
+      <a onclick="fadeInLoadingDiv()" class="remoteBtn" id="profileBtn" title="Go to CV Page" href="./cv.html">CV</a>
+      <div class="litteBtns">
+        <div><a onclick="fadeInLoadingDiv()" class="remoteBtn" id="homeBtn" title="Go Home" href="./index.html"><i class="fas fa-home"></i></a></div>
+        <div><a onclick="fadeInLoadingDiv()" class="remoteBtn" id="backBtn" title="Go Back" href="javascript:history.back()"><i class="fas fa-undo-alt"></i></a></div>
+      </div>
     </div>
   </div>
   <div id="vignetteHome"></div>
@@ -70,33 +74,6 @@ crossorigin="anonymous"></script>
 <script type="text" src="/animationjscode.js"></script>
 <script type="text/javascript" src="./script.js"></script>
 <script>
-$.fn.extend({
-  animateCss: function (animationName, callback) {
-    var animationEnd = (function (el) {
-      var animations = {
-        animation: 'animationend',
-        OAnimation: 'oAnimationEnd',
-        MozAnimation: 'mozAnimationEnd',
-        WebkitAnimation: 'webkitAnimationEnd',
-      };
-
-      for (var t in animations) {
-        if (el.style[t] !== undefined) {
-          return animations[t];
-        }
-      }
-    })(document.createElement('div'));
-
-    this.addClass('animated ' + animationName).one(animationEnd, function () {
-      $(this).removeClass('animated ' + animationName);
-
-      if (typeof callback === 'function') callback();
-    });
-
-    return this;
-  },
-});
-
 // $(".testimonial-card").animateCss('fadeIn');
 </script>
 
